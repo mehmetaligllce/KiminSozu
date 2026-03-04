@@ -1,0 +1,11 @@
+<div class="form-container">
+    <h1>Yeni Söz Ekle</h1>
+
+    <form action="/ekle" method="post">
+        <!-- Text yerine textarea koydum ki uzun sözler rahat yazılsın -->  
+        <input type="text" placeholder="Sözü Söyleyen (Zorunlu)" id="author" name="author" required autocomplete="off">
+        <textarea placeholder="Kaydedilecek Söz..." id="text" name="text" rows="4" required></textarea>
+
+        <button type="submit">Gönder ve Kaydet</button>
+    </form>
+</div>

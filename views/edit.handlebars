@@ -1,0 +1,11 @@
+<div class="form-container">
+    <h1>Sözü Düzenle</h1>
+
+    <form action="/edit/{{word._id}}" method="post">
+        <input type="text" placeholder="Sözü Söyleyen" id="author" name="author" required autocomplete="off"
+            value="{{word.author}}">
+        <textarea placeholder="Yeni Söz..." id="text" name="text" rows="4" required>{{word.text}}</textarea>
+
+        <button type="submit">Gönder ve Kaydet</button>
+    </form>
+</div>

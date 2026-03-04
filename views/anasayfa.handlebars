@@ -1,0 +1,27 @@
+<div class="anasayfa-container">
+    <h1>Kimin Sözü?</h1>
+    <form action="/search" method="GET" class="search-form">
+        <input type="text" name="q" class="search-input" placeholder="Sözü Ara..." autocomplete="off">
+        <button type="submit" class="search-btn">Ara</button>
+    </form>
+    <br>
+
+    <div class="sozler-listesi">
+        {{#each words}}
+        <div class="soz-karti">
+            <p class="soz-metni">"{{this.text}}"</p>
+            <h3 class="soz-sahibi">- {{this.author}}</h3>
+            <form action="/sil/{{this._id}}" method="POST" class="sil-form">
+                <button type="submit" class="sil-btn">Sil</button>
+            </form>
+            <a href="/edit/{{this._id}}" class="edit-btn">Düzenle</a>
+        </div>
+        {{else}}
+        <div class="soz-karti" style="text-align: center;">
+            <p>Henüz hiç söz eklenmemiş. İlk ekleyen sen ol!</p>
+        </div>
+        {{/each}}
+    </div>
+
+    <a href="/ekle" class="yeni-ekle-btn">Yeni Söz Ekle</a>
+</div>
